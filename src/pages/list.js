@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 
 class List extends Component {
+    pageSet = () => {
+        this.props.history.push('/set')
+    }
+
     render() {
         return(
             <div>
                 <div className='contents-1'>
                     <h1>Todo List</h1>
-                    <button> List </button>
-                    <button> Set </button>
+                    <button onClick={this.pageSet}> Set </button>
                 </div>
 
                 <table border='1' className='table-1'>
