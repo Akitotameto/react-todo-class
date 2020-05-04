@@ -9,8 +9,10 @@ class App extends Component {
   render() {
     return(
       <Router>
-        <Route exact path='/' component={List} />
-        <Route path='/set' component={Set} />
+        <Router>
+          <Route exact path='/' component={List} />
+          <Route path='/set' component={Set} />
+        </Router>
       </Router>
     )
   }
