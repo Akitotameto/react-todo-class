@@ -1,16 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import Header from  '../components/header'
 
 class List extends Component {
-    pageSet = () => {
-        this.props.history.push('/set')
-    }
-
     render() {
         return(
             <div>
+                <Header history={this.props.history}/>
                 <div className='contents-1'>
                     <h1>Todo List</h1>
-                    <button onClick={this.pageSet}> Set </button>
                 </div>
 
                 <table border='1' className='table-1'>
