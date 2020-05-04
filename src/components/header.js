@@ -12,8 +12,8 @@ class Header extends Component {
     render() {
         return(
             <div>
-                <button onClick={this.pageList}> List </button>
-                <button onClick={this.pageSet}> Set </button>
+                <button onClick={this.pageList}> List {this.props.index === 1 && `(avtive)`} </button>
+                <button onClick={this.pageSet}> Set {this.props.index === 2 && `(avtive)`} </button>
             </div>
         )
     }
