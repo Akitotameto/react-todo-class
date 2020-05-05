@@ -9,7 +9,15 @@ class TodoDateLow extends Component {
         }
     }
 
-    clickFavorite = id => {
+    componentWillUpdate() {
+        console.log('componentWillUpdate!!!')
+    }
+
+    componentDidUpdate() {
+        console.log('componentDidUpdate!!!')
+    }
+
+    onFavorite = id => {
         const { todoData } = this.state;
         console.log("test", id)
         todoData.map((v, index) => {
@@ -32,7 +40,7 @@ class TodoDateLow extends Component {
         })
     };
 
-    clickUnFavorite = id => {
+    onUnFavorite = id => {
         const { todoData } = this.state;
         console.log("test", id)
         todoData.map((v, index) => {
@@ -55,14 +63,14 @@ class TodoDateLow extends Component {
         })
     };
 
-    clickDelete = id => {
+    onDeleteLow = id => {
         const { todoData } = this.state;
         console.log("test", id)
         todoData.map((v, index) => {
             console.log('==================')
             console.log('todo value', v)
             if (v.id === id){
-                todoData.splice(v.index, v.id)
+                todoData.splice(index, 1)
                 this.setState({ todoData })
                 console.log('todoData', todoData)
             }
@@ -84,9 +92,9 @@ class TodoDateLow extends Component {
                     <td>{item.createdAt}</td>
                     <td>{item.category}</td>
                     <td>
-                        <button onClick={() => this.clickFavorite(item.id)}> お気に入り </button><br />
-                        <button onClick={() => this.clickUnFavorite(item.id)}> お気に入り </button><br />
-                        <button onClick={() => this.clickDelete(item.id)}> 削除 </button><br />
+                        <button onClick={() => this.onFavorite(item.id)}> お気に入り </button><br />
+                        <button onClick={() => this.onUnFavorite(item.id)}> お気に入り </button><br />
+                        <button onClick={() => this.onDeleteLow(item.id)}> 削除 </button><br />
                     </td>
                     {console.log('id',item.id)}
                 </tr>)

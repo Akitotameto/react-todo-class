@@ -2,38 +2,63 @@ import React, { Component } from 'react'
 import Header from  '../components/header'
 import TodoDateLow from  '../components/todo-data-low'
 
-let todoData = [
-    {
-        id: 1,
-        title: 'タイトル1',
-        content: '内容1内容1内容1内容1内容1内容1内容1',
-        createdAt: '2020-05-04',
-        category: 1,
-        isFavorite: false,
-        index: 0
-    },
-    {
-        id: 2,
-        title: 'タイトル2',
-        content: '内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2',
-        createdAt: '2020-05-04',
-        category: 2,
-        isFavorite: true,
-        index: 1
-    },
-    {
-        id: 3,
-        title: 'タイトル3',
-        content: '内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3',
-        createdAt: '2020-05-04',
-        category: 1,
-        isFavorite: false,
-        index: 2
-    },
-]
-
 class List extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            todoData: []
+        }
+    }
+
+
+    fetchTodoData = () => {
+        const todoData = [
+            {
+                id: 1,
+                title: 'タイトル1',
+                content: '内容1内容1内容1内容1内容1内容1内容1',
+                createdAt: '2020-05-04',
+                category: 1,
+                isFavorite: false,
+            },
+            {
+                id: 2,
+                title: 'タイトル2',
+                content: '内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2内容2',
+                createdAt: '2020-05-04',
+                category: 2,
+                isFavorite: true,
+            },
+            {
+                id: 3,
+                title: 'タイトル3',
+                content: '内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3内容3',
+                createdAt: '2020-05-04',
+                category: 1,
+                isFavorite: false,
+            },
+        ]
+
+        setTimeout(() => this.setState({ todoData }), 3000)
+    }
+
+    componentWillMount() {
+        console.log('componentWillMount!!!')
+    }
+
+    componentDidMount() {
+        this.fetchTodoData()
+        console.log('componentDidMount!!!')
+    }
+
+    componentWillUnmount() {
+        console.log('componentWillUnmount!!!')
+    }
+
     render() {
+        const { todoData } = this.state;
+
         return(
             <div>
                 <Header history={this.props.history} index={1}/>
@@ -52,7 +77,7 @@ class List extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <TodoDateLow todoData={todoData}/>
+                        {todoData.length ? <TodoDateLow todoData={todoData}/> : "読み込み中..." }
                     </tbody>
                 </table>
             </div>
