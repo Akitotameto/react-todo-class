@@ -37,15 +37,19 @@ class List extends Component {
                 </div>
 
                 <table border='1' className='table-1'>
-                <tr>
-                    <th>ID</th>
-                    <th>タイトル</th>
-                    <th>内容</th>
-                    <th>日時</th>
-                    <th>カテゴリ</th>
-                    <th>操作</th>
-                </tr>
-                <TodoDateLow todoData={todoData}/>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>タイトル</th>
+                            <th>内容</th>
+                            <th>日時</th>
+                            <th>カテゴリ</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <TodoDateLow todoData={todoData}/>
+                    </tbody>
                 </table>
             </div>
         )
