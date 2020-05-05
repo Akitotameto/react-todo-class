@@ -29,6 +29,7 @@ const todoData = [
 class List extends Component {
 
     render() {
+        console.log('list');
         return(
             <div>
                 <Header history={this.props.history} index={1}/>
