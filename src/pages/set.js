@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from  '../components/header'
-import TodoDateLow from  '../components/todo-date-low'
+import Form from  '../components/form'
 
 class Set extends Component {
     render() {
@@ -8,6 +8,7 @@ class Set extends Component {
             <div>
                 <Header history={this.props.history} index={2} />
                 <h1>登録画面</h1>
+                <Form />
             </div>
         )
     }
