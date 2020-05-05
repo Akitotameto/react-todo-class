@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 import './App.css';
 import List from './pages/list'
@@ -9,12 +9,12 @@ class App extends Component {
   render() {
     console.log('App');
     return(
-      <Router>
-        <Router>
+      <BrowserRouter>
+        <Switch>
           <Route exact path='/' component={List} />
           <Route path='/set' component={Set} />
-        </Router>
-      </Router>
+        </Switch>
+      </BrowserRouter>
     )
   }
 }
