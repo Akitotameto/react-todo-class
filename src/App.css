@@ -10,3 +10,7 @@ body {
 .table-1 {
   margin-top: 20px;
 }
+
+td {
+  text-align: center;
+}

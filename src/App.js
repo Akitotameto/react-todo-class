@@ -7,7 +7,6 @@ import Set from './pages/set'
 
 class App extends Component {
   render() {
-    console.log('App');
     return(
       <BrowserRouter>
         <Switch>
